@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>touchstonejs</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.1.2</version>
     <name>Touchstone</name>
     <description>WebJar for Touchstone</description>
     <url>http://webjars.org</url>
@@ -34,7 +34,7 @@
         <developer>
             <id>vgiverts</id>
             <name>Vladimir Giverts</name>
-            <email></email>
+            <email />
         </developer>
     </developers>
 
@@ -50,7 +50,7 @@
         <url>http://github.com/webjars/touchstonejs</url>
         <connection>scm:git:https://github.com/webjars/touchstonejs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/touchstonejs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>touchstonejs-0.1.2</tag>
     </scm>
 
     <build>
@@ -65,13 +65,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="download archive" />
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${project.artifactId}-${upstream.version}" excludes="site/"/>
+                                    <fileset dir="${project.build.directory}/${project.artifactId}-${upstream.version}" excludes="site/" />
                                 </move>
                             </target>
                         </configuration>
